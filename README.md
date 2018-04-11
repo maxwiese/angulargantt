@@ -1,22 +1,37 @@
-\#RoomOccupancyGantt
+# Raum - Auslastungs - Anzeige
 
-This is an Angular and Express based Web-Application to prepare and display data from a CSV-File.
+Express und Angular 5 basierte Webapplication um Raumbelegung als Diagram darzustellen
 
-**Using:**
-\+Angular 5
-\+Express
-\+AmCharts
+## Voraussetzungen
 
-the data structur in the CSV-File called **RoomOccupancy.csv**
-(you can change this in the `config.json`) have to look like this:
+```
+Git
 
-|  Raum |  Von  |  Bis  |
-| :---: | :---: | :---: |
-| Room1 | 13:00 | 15:00 |
-| Room1 | 09:00 | 10:00 |
-| Room2 | 08:30 | 16:00 |
-| Room3 | 07:00 | 13:00 |
+Node Js (min. v8.x)
+NPM (-> wird mit Node installiert)
+```
 
-to use another data, you have to change the **server.js**.
+## Installation
 
-> special Thanks to @martinsaigger
+App herunterladen
+```
+git clone https://github.com/maxwiese/RoomOccupancyGantt
+```
+App installieren
+```
+npm install
+```
+Angular bauen
+```
+ng build --prod
+```
+
+
+## Nutzung
+
+App starten
+```
+node server.js
+```
+##
+> Vielen Dank  @martinsaigger
