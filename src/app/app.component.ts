@@ -61,6 +61,9 @@ export class AppComponent implements OnInit, OnDestroy {
       "dataProvider": dataProvider,
       "export": {
         "enabled": true
+      },
+      "responsive": {
+        "enabled":true
       }
     };
   }
