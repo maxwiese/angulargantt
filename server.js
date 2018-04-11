@@ -13,6 +13,9 @@ var _array = [];
 var rooms = [];
 var allsegments = [];
 
+var summertime = config.isSummertime?2:1;
+console.log(summertime);
+
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -40,9 +43,10 @@ app.get('/tasks', function(req, res) {
   var time = date.getHours() + ':'+ date.getMinutes() + ':' + date.getSeconds();
 
   function parseSegments(item, index) {
+
     var segments = {
-      "start": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + item['Von']),
-      "end": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + item['Bis']),
+      "start": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + (parseInt(item['Von'].substring(0, 2))+summertime) + ':' + (parseInt(item['Von'].substring(3, 5))+summertime)),
+      "end": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + (parseInt(item['Bis'].substring(0, 2))+summertime) + ':' + (parseInt(item['Bis'].substring(3, 5))+summertime)),
       "task": item['Raum']
     };
     return segments;
