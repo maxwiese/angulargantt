@@ -90,7 +90,8 @@ app.get('/tasks', function(req, res) {
     .on('done', (err) => {
       //send data if parsing compvare
       if (err) {
-        res.send('('+time+') sry, unable to parse csv')
+        console.log('('+time+') sry, unable to parse csv');
+        console.log(err);
       };
       console.log('('+time+') Sucessfully send JSON data')
       //map the data
