@@ -1,5 +1,5 @@
 {
-  "filePath": "RoomOccupancy.csv",
+  "filePath": "/home/pi/roomdata/RoomOccupancy.csv",
   "theme": {
     "firBarColor": "#5A91CD",
     "secBarColor": "#8697A1"

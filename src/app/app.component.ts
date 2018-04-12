@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
       "type": "gantt",
       "theme": "light",
       "marginRight": 20,
-      "fontFamily": "segoe ui",
+      "fontFamily": "sans-serif",
       "fontSize": 12,
       "period": "hh",
       "dataDateFormat": "YYYY-MM-DD HH:NN",
