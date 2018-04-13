@@ -14,7 +14,6 @@ var rooms = [];
 var allsegments = [];
 
 var summertime = config.isSummertime?2:1;
-console.log(summertime);
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -45,8 +44,8 @@ app.get('/tasks', function(req, res) {
   function parseSegments(item, index) {
 
     var segments = {
-      "start": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + (parseInt(item['Von'].substring(0, 2))+summertime) + ':' + (parseInt(item['Von'].substring(3, 5))+summertime)),
-      "end": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + (parseInt(item['Bis'].substring(0, 2))+summertime) + ':' + (parseInt(item['Bis'].substring(3, 5))+summertime)),
+      "start": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + (parseInt(item['Von'].substring(0, 2))+summertime) + ':' + (parseInt(item['Von'].substring(3, 5))/* Using only in Germany +summertime*/)),
+      "end": new Date((new Date().getUTCMonth() + 1) + ', ' + new Date().getDate() + ', ' + new Date().getFullYear() + ' ' + (parseInt(item['Bis'].substring(0, 2))+summertime) + ':' + (parseInt(item['Bis'].substring(3, 5)) /* Using only in Germany +summertime*/)),
       "task": item['Raum']
     };
     return segments;
@@ -91,7 +90,8 @@ app.get('/tasks', function(req, res) {
     .on('done', (err) => {
       //send data if parsing compvare
       if (err) {
-        res.send('('+time+') sry, unable to parse csv')
+        console.log('('+time+') sry, unable to parse csv');
+        console.log(err);
       };
       console.log('('+time+') Sucessfully send JSON data')
       //map the data

@@ -1,7 +1,7 @@
 {
-  "filePath": "RoomOccupancy.csv",
+  "filePath": "RoomOccupancy_ready.csv",
   "theme": {
-    "firBarColor": "#0E2F44",
+    "firBarColor": "#5A91CD",
     "secBarColor": "#8697A1"
   },
   "isSummertime":true
